@@ -2,7 +2,9 @@ import io
 import unittest
 from unittest.mock import patch
 
-import task_2
+from shop import Product, Cart, Shop
+
+
 
 
 class TestShop(unittest.TestCase):
@@ -85,3 +87,7 @@ class TestShop(unittest.TestCase):
     def test_remove_products_from_cart_more_then_exist_exception(self):
         self.assertRaisesRegex(RuntimeError, 'В корзине не найден товар с ID: 1',
                                self.cart.remove_product_by_id, id_=1)
+        
+        
+if __name__ == '__main__':
+    unittest.main()
